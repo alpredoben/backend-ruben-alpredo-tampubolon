@@ -58,6 +58,7 @@ module.exports = {
       updated_at: {
         type: Sequelize.DATE,
         allowNull: true,
+        defaultValue: Sequelize.fn('NOW'),
       },
       updated_by: {
         type: Sequelize.UUID,

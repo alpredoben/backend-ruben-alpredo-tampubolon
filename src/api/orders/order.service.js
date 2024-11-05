@@ -2,8 +2,7 @@
 /* eslint-disable import/no-unresolved */
 const { mapingMessage } = require('../../utils/responser');
 const httpStatus = require('http-status');
-const ProductOrder = require('../../database/models/product_order_model');
-const Product = require('../../database/models/product_model');
+const { ProductOrder, Product } = require('../../database/models');
 const { translator } = require('../../lang');
 
 /* eslint-disable no-unused-vars */
@@ -29,8 +28,20 @@ module.exports = {
         objectFilter.offset = (filter.page - 1) * filter.limit;
       }
 
-      const { count: totalRows, rows } =
-        await ProductOrder.findAndCountAll(objectFilter);
+      const { count: totalRows, rows } = await ProductOrder.findAndCountAll({
+        ...objectFilter,
+        include: [
+          {
+            model: Product,
+            attributes: [
+              'product_id',
+              'product_name',
+              'product_price',
+              'product_stock',
+            ],
+          },
+        ],
+      });
 
       return mapingMessage(
         true,
@@ -55,6 +66,12 @@ module.exports = {
     try {
       const productOrder = await ProductOrder.findOne({
         where: { order_id, deleted_at: null },
+        include: [
+          {
+            model: Product,
+            attributes: ['product_id', 'product_name', 'product_stock'],
+          },
+        ],
       });
 
       if (!productOrder) {

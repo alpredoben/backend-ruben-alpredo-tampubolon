@@ -23,7 +23,7 @@ const ProductOrder = sequelize.define(
       allowNull: true,
       references: {
         model: 'products',
-        key: 'user_id',
+        key: 'product_id',
       },
     },
     quantity: {

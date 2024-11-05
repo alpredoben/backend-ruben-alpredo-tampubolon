@@ -5,7 +5,7 @@ const httpStatus = require('http-status');
 const { JWT } = require('../configs/environments');
 const { getErrorResponse } = require('../utils/responser');
 const { translator } = require('../lang');
-const Role = require('../database/models/role_model');
+const { Role } = require('../database/models');
 
 module.exports = {
   authMiddleware: async (req, res, next) => {
@@ -61,6 +61,7 @@ module.exports = {
       if (findRole && findRole?.role_name === 'customer') {
         req.user = { ...decoded, role_name: findRole.role_name };
         next();
+        return;
       }
 
       return getErrorResponse(

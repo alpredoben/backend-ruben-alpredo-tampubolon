@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved */
 const httpStatus = require('http-status');
 const { Op } = require('sequelize');
-const Product = require('../../database/models/product_model');
+const { Product } = require('../../database/models');
 const { translator } = require('../../lang');
 const { mapingMessage } = require('../../utils/responser');
 
