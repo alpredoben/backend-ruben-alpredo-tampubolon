@@ -1,0 +1,53 @@
+{
+  "/auth/sign-in": {
+    "post": {
+      "tags": ["Authentication"],
+      "summary": "Login Account",
+      "requestBody": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SchemaPostSignIn"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SchemaResponse"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "/auth/refresh-token": {
+    "get": {
+      "tags": ["Authentication"],
+      "summary": "Refresh token",
+      "security": [
+        {
+          "bearerAuth": []
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SchemaResponse"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,212 @@
+{
+  "/order": {
+    "get": {
+      "tags": ["Product Order"],
+      "security": [
+        {
+          "bearerAuth": []
+        }
+      ],
+      "parameters": [
+        {
+          "in": "query",
+          "name": "limit",
+          "required": false,
+          "schema": {
+            "type": "integer"
+          },
+          "description": "Limit value is number by default limit is 10. ex : ?limit=100"
+        },
+        {
+          "in": "query",
+          "name": "page",
+          "required": false,
+          "schema": {
+            "type": "number"
+          },
+          "description": "Page value is number. ex : ?page=1"
+        },
+        {
+          "in": "query",
+          "name": "direction",
+          "required": false,
+          "schema": {
+            "type": "array or string"
+          },
+          "description": "Example : product_code, product_name or product_qty"
+        },
+        {
+          "in": "query",
+          "name": "order",
+          "required": false,
+          "schema": {
+            "type": "array or string"
+          },
+          "description": "Examples : asc or desc"
+        },
+        {
+          "in": "query",
+          "name": "product_id",
+          "required": false,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Example: Product ID (UUID) = 'b0768be4-7d3a-45cc-90cf-efe5ca570137'"
+        },
+        {
+          "in": "query",
+          "name": "customer_id",
+          "required": false,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Example: Product ID (UUID) = '7c4cbb70-5ddd-4a28-b87a-bedc29ef0170'"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SchemaResponse"
+              }
+            }
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": ["Product Order"],
+      "security": [
+        {
+          "bearerAuth": []
+        }
+      ],
+      "requestBody": {
+        "required": false,
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SchemaPostOrder"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SchemaResponse"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "/order/{order_id}": {
+    "get": {
+      "tags": ["Product Order"],
+      "security": [
+        {
+          "bearerAuth": []
+        }
+      ],
+      "parameters": [
+        {
+          "in": "path",
+          "name": "order_id",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SchemaResponse"
+              }
+            }
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": ["Product Order"],
+      "security": [
+        {
+          "bearerAuth": []
+        }
+      ],
+      "parameters": [
+        {
+          "in": "path",
+          "name": "order_id",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "requestBody": {
+        "required": false,
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SchemaPostOrder"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SchemaResponse"
+              }
+            }
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": ["Product Order"],
+      "security": [
+        {
+          "bearerAuth": []
+        }
+      ],
+      "parameters": [
+        {
+          "in": "path",
+          "name": "order_id",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SchemaResponse"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

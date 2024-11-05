@@ -1,0 +1,14 @@
+{
+  "SchemaPostOrder": {
+    "type": "object",
+    "properties": {
+      "product_id": {
+        "type": "string"
+      },
+      "quantity": {
+        "type": "number",
+        "default": 2
+      }
+    }
+  }
+}

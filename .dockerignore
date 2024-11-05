@@ -1,0 +1,41 @@
+node_modules/
+logs/
+coverage/
+docker/
+
+coverage
+*.lcov
+.vscode
+*.log
+.husky
+
+docker-compose*
+docker/*
+docker/
+Jenkinsfile
+
+.gitignore
+.dockerignore
+Makefile
+LICENSE
+README.md
+
+
+# Ignore local environment files
+.env
+
+# Ignore temporary files and directories
+tmp/
+*.tmp
+
+# Ignore Git-related files
+.git
+.gitignore
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore any local editor/IDE config files
+.vscode
+.idea

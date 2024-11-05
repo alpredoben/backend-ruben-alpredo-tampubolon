@@ -1,0 +1,15 @@
+{
+  "SchemaPostSignIn": {
+    "type": "object",
+    "properties": {
+      "email": {
+        "type": "string",
+        "default": "merchant@example.com"
+      },
+      "password": {
+        "type": "string",
+        "default": "password123"
+      }
+    }
+  }
+}

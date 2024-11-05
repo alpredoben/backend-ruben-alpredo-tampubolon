@@ -1,0 +1,68 @@
+{
+  "message": {
+    "success": {
+      "info": {
+        "route_api": "Welcome to Rest API Ecommerce XXXX"
+      },
+      "user": {
+        "created": "Create new user account success",
+        "login": "Login success",
+        "refresh_token": "Refresh token success"
+      },
+      "product": {
+        "get": "Get data product successfully",
+        "updated": "Product update successfully",
+        "created": "Product create successfully",
+        "deleted": "Product delete successfully"
+      },
+      "product_order": {
+        "get": "Get data product order successfully",
+        "updated": "Product Order update successfully",
+        "created": "Product Order create successfully",
+        "deleted": "Product Order delete successfully"
+      }
+    },
+    "error": {
+      "auth": {
+        "token_denied": "Access Denied: No Token Provided",
+        "token_expired": "Invalid or Expired Token",
+        "invalid_refresh": "Invalid refresh token",
+        "unautorized": "You can not access"
+      },
+      "route": {
+        "not_found": "{{path}} not found"
+      },
+      "user": {
+        "not_found": "User not found",
+        "invalid_password": "Incorrect your password",
+        "existed": "Your account has already registered",
+        "created": "Failed to create a new account",
+        "invalid_email": "Invalid your email",
+        "login": "Failed to login your account"
+      },
+      "product": {
+        "not_found": "Product {{id}} not found",
+        "existed": "Product {{code}} has already existed",
+        "unavailable": "Product stock empty"
+      },
+      "product_order": {
+        "not_found": "Product  Order {{id}} not found",
+        "created": "Product failed to order"
+      },
+      "database": {
+        "undefined": "Undefined database name. Please check your database name",
+        "disconnect": "Disconnect database. Please check your database connection",
+        "authorization": "Unauthorize connect to datbaase. Please check your database credential",
+        "query_builder": "Please check your query or ORM builder"
+      },
+      "validation": {
+        "required": "Field {{fieldName}} must be filled",
+        "valid_email": "You must be filled valid format email"
+      },
+      "others": {
+        "limit_rate": "",
+        "server_error": "Internal server error"
+      }
+    }
+  }
+}

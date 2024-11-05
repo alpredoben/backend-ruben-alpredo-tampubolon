@@ -1,0 +1,23 @@
+{
+  "SchemaPostProduct": {
+    "type": "object",
+    "properties": {
+      "product_code": {
+        "type": "string",
+        "default": "PR001"
+      },
+      "product_name": {
+        "type": "string",
+        "default": "Product 1"
+      },
+      "product_price": {
+        "type": "number",
+        "default": 175000
+      },
+      "product_stock": {
+        "type": "number",
+        "default": 10
+      }
+    }
+  }
+}
