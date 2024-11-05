@@ -62,3 +62,11 @@
 ```cli
   npm run dev
 ```
+
+### Setup Application Via Dockerfile
+
+Running command below :
+
+```cli
+  docker compose -f docker-compose.dev.yml up --build --remove-orphans --force-recreate -d
+```

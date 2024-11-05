@@ -46,8 +46,8 @@ docker-down:
 	docker compose -f $(compose-file) down --remove-orphans
 
 docker-migrate:
-	docker-compose -f $(compose-file) exec ae-core-api npx sequelize db:migrate
+	docker-compose -f $(compose-file) exec $(container-name) npx sequelize db:migrate --config src/configs/config.js
 
 docker-seed:
-	docker-compose -f $(compose-file) exec ae-core-api sequelize db:seed:all
+	docker-compose -f $(compose-file) exec $(container-name) npx sequelize db:seed:all --config src/configs/config.js
 
