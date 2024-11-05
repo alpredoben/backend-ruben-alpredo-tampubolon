@@ -1,26 +1,26 @@
 services:
-  # merchant-api:
-  #   build:
-  #     context: ./docker
-  #     dockerfile: Dockerfile.dev
-  #   container_name: merchant-api
-  #   restart: always
-  #   env_file:
-  #     - .env
-  #   ports:
-  #     - '${APP_PORT}:${APP_PORT}'
-  #   depends_on:
-  #     - merchant-db-api
-  #   networks:
-  #     - net_merchant_api
-  #   volumes:
-  #     - .:/usr/src/app
-  #     - /app/node_modules
-  #   logging:
-  #     driver: 'json-file'
-  #     options:
-  #       max-size: '100m'
-  #       max-file: '5'
+  merchant-api:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile.dev
+    container_name: merchant-api
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - '${APP_PORT}:${APP_PORT}'
+    depends_on:
+      - merchant-db-api
+    networks:
+      - net_merchant_api
+    volumes:
+      - .:/usr/src/app
+      - /app/node_modules
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '100m'
+        max-file: '5'
 
   merchant-db-api:
     image: mysql:latest
