@@ -1,3 +1,7 @@
+### Rest API Documentation
+
+> > > http://localhost:[port]/documentation
+
 ### Login Credential
 
 1. Customer Account
